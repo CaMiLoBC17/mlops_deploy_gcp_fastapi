@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: servicio-api-first-deploy
+spec:
+  template:
+    spec:
+      containers:
+        - image: us-central1-docker.pkg.dev/project-first-deploy/repo-first-deploy/image-v13-servicio-prediccion:latest
+          env:
+          ports:
+            - containerPort: 4000
